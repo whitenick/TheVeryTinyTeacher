@@ -63,7 +63,7 @@ export default function About() {
         title="Meet Sarah Adler"
       />
       <CardContent className={classes.media}>
-        <Avatar className={classes.avatar} src='/tinyteacher.jpg'/>
+        <Avatar className={classes.avatar} src='/TinyTeacherCircle.jpg'/>
       </CardContent>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

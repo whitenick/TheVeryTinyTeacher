@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   toolbarLink: {
     padding: theme.spacing(1),
     flexShrink: 0,
-  },
+  }
 }));
 
 export default function Header(props) {
@@ -42,9 +42,9 @@ export default function Header(props) {
     <React.Fragment>
       <Toolbar boxShadow={2} className={classes.toolbar}>
           <Grid container spacing={3}>
-              <Grid item xs={3}/>
-              <Grid item xs={6}>
-                    <Typography
+              <Grid item xs={2}/>
+              <Grid item xs={8} >
+                    {/* <Typography
                         component="h2"
                         variant="h5"
                         color="inherit"
@@ -53,9 +53,10 @@ export default function Header(props) {
                         className={classes.toolbarTitle}
                         >
                         {title}
-                    </Typography>
+                    </Typography> */}
+                    <img src="/WebsiteHeader.png"/>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={2}>
                 <Button size="small">TPT</Button>
                 <IconButton>
                     <InstagramIcon />
