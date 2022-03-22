@@ -44,16 +44,6 @@ export default function Header(props) {
           <Grid container spacing={3}>
               <Grid item xs={2}/>
               <Grid item xs={8} >
-                    {/* <Typography
-                        component="h2"
-                        variant="h5"
-                        color="inherit"
-                        align="center"
-                        noWrap
-                        className={classes.toolbarTitle}
-                        >
-                        {title}
-                    </Typography> */}
                     <img src="/WebsiteHeader.png"/>
               </Grid>
               <Grid item xs={2}>

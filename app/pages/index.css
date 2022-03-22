@@ -1,0 +1,28 @@
+/*@import "tailwindcss/base";*/
+/*@import "tailwindcss/components";*/
+/*@import "tailwindcss/utilities";*/
+
+@layer base {
+    @font-face {
+        font-family: 'jim-pam';
+        src: font-url("/BBPAMJIM4EVER.ttf") format("truetype");
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'little-spark';
+        src: font-url("/KGALittleSpark.ttf") format("truetype");
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'boom-roasted';
+        src: font-url("/BBBoomRoasted.ttf") format("truetype");
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
