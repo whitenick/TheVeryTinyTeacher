@@ -5,7 +5,6 @@ import { HStack } from './flexbox';
 
 const ModalManager = () => (
     <Dialog.Root defaultOpen={true}>
-        <Dialog.Trigger />
         <Dialog.Overlay
             style={{
                 zIndex: 10000
@@ -32,7 +31,7 @@ const ModalManager = () => (
                         <FiX size={20} />
                     </button>
                 </div>
-                <HStack className='w-full justify-center p-6'>
+                <HStack>
                     Sign-up for Newsletter Modal
                 </HStack>
             </div>

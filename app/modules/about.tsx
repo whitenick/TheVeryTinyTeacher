@@ -15,7 +15,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
     }
     return (
         <DesktopLayout>
-            <VStack className="space-y-6">
+            <VStack>
                 <HStack className={"py-4"}>
                     <DesktopHeader />
                     <HStack className={"w-full justify-center py-4"}>
