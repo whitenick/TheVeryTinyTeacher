@@ -5,21 +5,29 @@
 @layer base {
     @font-face {
         font-family: 'jim-pam';
-        src: font-url("/BBPAMJIM4EVER.ttf") format("truetype");
+        src: url("../public/BBPAMJIM4EVER.ttf") format("truetype");
     }
 }
 
 @layer base {
     @font-face {
         font-family: 'little-spark';
-        src: font-url("/KGALittleSpark.ttf") format("truetype");
+        src: url("../public/KGALittleSpark.ttf") format("truetype");
     }
 }
 
 @layer base {
     @font-face {
+        font-family: 'marion';
+        src: url("../public/Marion_Regular.ttf") format("truetype");
+    }
+}
+
+
+@layer base {
+    @font-face {
         font-family: 'boom-roasted';
-        src: font-url("/BBBoomRoasted.ttf") format("truetype");
+        src: url("../public/BBBoomRoasted.ttf") format("truetype");
     }
 }
 

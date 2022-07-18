@@ -56,7 +56,7 @@ export const DesktopHeader: React.FC<any> = (props) => {
 const DesktopNav = (props) => {
     return (
         <HStack className={"bg-pink w-full h-12 px-4 shadow-md"}>
-            <HStack className="space-x-2 w-full items-center">
+            {/* <HStack className="space-x-2 w-full items-center">
                 {sections.map((item, index) => {
                     return (
                         <div key={index} className="p-2 text-white text-3xl">
@@ -64,14 +64,14 @@ const DesktopNav = (props) => {
                         </div>
                     )
                 })}
-            </HStack>
-            <HStack className="p-2 space-x-4">  
+            </HStack> */}
+            <HStack className="p-2 space-x-4 justify-end w-full">  
                 <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
                     <FiInstagram className="w-full h-full text-white" />
                 </a> 
-                <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
+                {/* <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
                     <FaPinterestP className="w-full h-full text-white" />
-                </a> 
+                </a>  */}
             </HStack>
         </HStack>
     )
@@ -87,7 +87,7 @@ export const HomeNav: React.FC<any> = (props) => {
             }}>
                 <VStack className="h-full justify-end">
                     <img src="/home button.svg" />
-                    <span>Home</span>
+                    <span className="font-marion font-semibold">HOME</span>
                 </VStack>
             </Buttons.Standard>
             <Buttons.Standard className="flex bg-sea-green rounded-md px-2 hover:shadow-md" onClick={() => {
@@ -95,21 +95,21 @@ export const HomeNav: React.FC<any> = (props) => {
             }}>
                 <VStack className="h-full justify-end">
                     <img className="max-h-[140px]" src="/About Me Icon.svg" />
-                    <span>About Me</span>
+                    <span className="font-marion font-semibold">ABOUT ME</span>
                 </VStack>
             </Buttons.Standard>
             <Buttons.Standard className="flex bg-deep-orange rounded-md px-2 hover:shadow-md">
-                <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
-                    <VStack className="h-full justify-end">
+                <VStack className="h-full justify-end">
+                    <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
                         <img src="/Shop Icon.svg" />
-                        <span>Shop</span>
-                    </VStack>
-                </a>
+                        <span className="font-marion font-semibold">SHOP</span>
+                    </a>
+                </VStack>
             </Buttons.Standard>
             <Buttons.Standard className="flex bg-pink rounded-md px-2 hover:shadow-md">
                 <VStack className="h-full justify-end">
                     <img src="/Blog Icon.svg" />
-                    <span className={""}>Blog</span>
+                    <span className="font-marion font-semibold">BLOG</span>
                 </VStack>
             </Buttons.Standard>
         </HStack>
