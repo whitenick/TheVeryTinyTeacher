@@ -10,11 +10,9 @@ const Home: React.FC<any> = ({ }) => {
     return (
         <DesktopLayout>
             <VStack className={'justify-center'} >
-                <HStack className={"py-4"}>
+                <HStack className={"py-8"}>
                     <DesktopHeader />
-                    <HStack className={"w-full justify-center py-4"}>
-                        <HomeNav />
-                    </HStack>
+                    <HomeNav />
                 </HStack>
                 <HStack className='px-16 justify-center'>
                     <Carousel

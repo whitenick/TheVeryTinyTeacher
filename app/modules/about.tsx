@@ -23,7 +23,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                     </HStack>
                 </HStack>
                 <HStack className="text-sea-green text-[100px] justify-center font-little-spark">About Me</HStack>
-                <HStack className={"m-auto grid w-[60vw] space-y-6 shadow bg-powder-blue p-4"}>
+                <HStack className={"m-auto grid w-[60vw] space-y-6 shadow bg-[#EDEDED] p-4"}>
                     <VStack className={"items-center"}>
                         <HStack>
                             <VStack className="space-y-4">
@@ -45,7 +45,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                         </HStack>
                         <HStack>
                             <HStack className="px-4">
-                                <img className="rounded min-w-[400px]" src="/about_me_1.png" />
+                                <img className="rounded min-w-[400px]" src="/me teaching.jpg" />
                             </HStack>
                             <HStack className>
                                 {educationAndCareer}
@@ -60,6 +60,9 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                             <HStack className={"text-base"}>
                                 {spareTime}
                             </HStack>
+                            <HStack className="px-4">
+                                <img className="rounded min-w-[20vw]" src="/me travelling.jpg" />
+                            </HStack>
                         </HStack>
                     </VStack>
                     <VStack className={"items-center"}>
@@ -70,9 +73,9 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                             {theVeryTinyTeacher}
                         </HStack>
                     </VStack>
-                    <HStack className={"items-center"}>
-                        <HStack className={"w-60 h-60"}>
-                            <img src="/about_me_1.png" />
+                    <HStack className={"items-center justify-center"}>
+                        <HStack className={"w-600 h-600"}>
+                            <img className='w-full h-full' src="/me on laptop.jpg" />
                         </HStack>
                     </HStack>
                 </HStack>

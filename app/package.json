@@ -5,13 +5,14 @@
     "dev": "next dev & npm run styles",
     "build": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css && next build",
     "start": "next start",
-    "start:prod": "next build && NODE_ENV=production  next start",
+    "start:prod": "next build && NODE_ENV=production next start",
     "styles": "npx tailwindcss -i ./pages/index.css -o ./pages/tw.css --watch",
     "lint": "next lint"
   },
   "dependencies": {
     "@dbeining/react-atom": "^4.1.21",
     "@radix-ui/react-dialog": "^0.1.7",
+    "@radix-ui/react-dropdown-menu": "^1.0.0",
     "@types/react": "^17.0.38",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",

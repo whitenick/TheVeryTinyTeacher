@@ -4,6 +4,7 @@ import { FaPinterestP } from 'react-icons/fa';
 import React from "react";
 import { Buttons } from "./button";
 import { useRouter } from "next/router";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
 interface Section {
     title: string,
@@ -35,7 +36,7 @@ const sections: Section[] = [
     },
     {
         title: 'Shop',
-        component: 
+        component:
             <a href="https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher" target={"_blank"}>
                 <NavButton title="Shop" />
             </a>
@@ -65,10 +66,10 @@ const DesktopNav = (props) => {
                     )
                 })}
             </HStack> */}
-            <HStack className="p-2 space-x-4 justify-end w-full">  
+            <HStack className="p-2 space-x-4 justify-end w-full">
                 <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
                     <FiInstagram className="w-full h-full text-white" />
-                </a> 
+                </a>
                 {/* <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
                     <FaPinterestP className="w-full h-full text-white" />
                 </a>  */}
@@ -77,17 +78,46 @@ const DesktopNav = (props) => {
     )
 }
 
+const ShopDropdownButton: React.FC<{}> = () => {
+    return (
+        <DropdownMenu.Root>
+            <DropdownMenu.Trigger asChild>
+                <Buttons.Standard className="flex bg-deep-orange rounded-md px-2 hover:shadow-md">
+                    <VStack className="h-full justify-end">
+                        {/* <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
+                            <img src="/Shop Icon.svg" />
+                            <span className="font-jim-pam text-3xl font-extrabold">SHOP</span>
+                        </a> */}
+                        <img src="/Shop Icon.svg" />
+                        <span className="font-jim-pam text-3xl font-extrabold">SHOP</span>
+                    </VStack>
+                </Buttons.Standard>
+            </DropdownMenu.Trigger>
+
+            <DropdownMenu.Content style={{ width: '200px' }}>
+                <DropdownMenu.Item>
+                    <div>Amazon Store Links</div>
+                </DropdownMenu.Item>
+                <DropdownMenu.Item>
+                    <div>Teachers Pay Teachers</div>
+                </DropdownMenu.Item>
+            </DropdownMenu.Content>
+
+        </DropdownMenu.Root>
+    )
+}
+
 export const HomeNav: React.FC<any> = (props) => {
     const router = useRouter();
 
     return (
-        <HStack className={"w-full space-x-10 justify-center"}>
+        <HStack className={"w-full space-x-10 justify-center py-4"}>
             <Buttons.Standard className="flex bg-powder-blue rounded-md px-2 hover:shadow-md" onClick={() => {
                 router.push("/");
             }}>
                 <VStack className="h-full justify-end">
                     <img src="/home button.svg" />
-                    <span className="font-marion font-semibold">HOME</span>
+                    <span className="font-jim-pam text-3xl font-extrabold">HOME</span>
                 </VStack>
             </Buttons.Standard>
             <Buttons.Standard className="flex bg-sea-green rounded-md px-2 hover:shadow-md" onClick={() => {
@@ -95,21 +125,17 @@ export const HomeNav: React.FC<any> = (props) => {
             }}>
                 <VStack className="h-full justify-end">
                     <img className="max-h-[140px]" src="/About Me Icon.svg" />
-                    <span className="font-marion font-semibold">ABOUT ME</span>
+                    <span className="font-jim-pam text-3xl font-extrabold">ABOUT ME</span>
                 </VStack>
             </Buttons.Standard>
-            <Buttons.Standard className="flex bg-deep-orange rounded-md px-2 hover:shadow-md">
-                <VStack className="h-full justify-end">
-                    <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
-                        <img src="/Shop Icon.svg" />
-                        <span className="font-marion font-semibold">SHOP</span>
-                    </a>
-                </VStack>
-            </Buttons.Standard>
-            <Buttons.Standard className="flex bg-pink rounded-md px-2 hover:shadow-md">
+            <ShopDropdownButton />
+            <Buttons.Standard
+                className="flex bg-pink rounded-md px-2 hover:shadow-md"
+                onClick={() => { router.push("/app/blog") }}
+            >
                 <VStack className="h-full justify-end">
                     <img src="/Blog Icon.svg" />
-                    <span className="font-marion font-semibold">BLOG</span>
+                    <span className="font-jim-pam text-3xl font-extrabold">BLOG</span>
                 </VStack>
             </Buttons.Standard>
         </HStack>
