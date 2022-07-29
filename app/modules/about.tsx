@@ -23,14 +23,14 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                     </HStack>
                 </HStack>
                 <HStack className="text-sea-green text-[100px] justify-center font-little-spark">About Me</HStack>
-                <HStack className={"m-auto grid w-[60vw] space-y-6 shadow bg-[#EDEDED] p-4"}>
+                <HStack className={"m-auto grid w-[60vw] space-y-6 shadow-lg bg-pink rounded p-4 mb-[200px]"}>
                     <VStack className={"items-center"}>
                         <HStack>
                             <VStack className="space-y-4">
                                 <HStack className={"text-3xl font-bold italic font-marion"}>
                                     Hey, I'm Sarah Adler!
                                 </HStack>
-                                <HStack>
+                                <HStack className={"font-jim-pam text-xl font-bold"}>
                                     {aboutMeIntro}
                                 </HStack>
                             </VStack>
@@ -47,7 +47,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                             <HStack className="px-4">
                                 <img className="rounded min-w-[400px]" src="/me teaching.jpg" />
                             </HStack>
-                            <HStack className>
+                            <HStack className={"font-jim-pam text-xl font-bold"}>
                                 {educationAndCareer}
                             </HStack>
                         </HStack>
@@ -57,7 +57,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                             In my spare time...
                         </HStack>
                         <HStack>
-                            <HStack className={"text-base"}>
+                            <HStack className={"font-jim-pam text-xl font-bold"}>
                                 {spareTime}
                             </HStack>
                             <HStack className="px-4">
@@ -69,7 +69,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                         <HStack className={"text-3xl italic font-bold font-marion p-4"}>
                             The Very Tiny Teacher
                         </HStack>
-                        <HStack className={"text-base"}>
+                        <HStack className={"font-jim-pam text-xl font-bold"}>
                             {theVeryTinyTeacher}
                         </HStack>
                     </VStack>
