@@ -721,11 +721,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #cdd5beff;
 }
 
-.bg-\[\#EDEDED\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 237 237 / var(--tw-bg-opacity));
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -736,10 +731,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-\[200px\] {
-  padding: 200px;
 }
 
 .px-4 {
@@ -777,18 +768,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pb-\[\] {
-  padding-bottom: ;
-}
-
-.pt-\[200px\] {
-  padding-top: 200px;
-}
-
-.pb-\[200px\] {
-  padding-bottom: 200px;
 }
 
 .font-jim-pam {
@@ -850,9 +829,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: #c56f25ff;
 }
 
-.text-forest-green {
+.text-pink {
   --tw-text-opacity: 1;
-  color: rgb(115 162 118 / var(--tw-text-opacity));
+  color: rgb(227 199 185 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -862,12 +841,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 

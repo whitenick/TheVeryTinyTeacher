@@ -52,7 +52,7 @@ const Home: React.FC<any> = ({ }) => {
                 </HStack>
                 <VStack className="bg-white">
                     <HStack className={"justify-center py-4 space-x-8"}>
-                        <span className={'text-[64px] font-little-spark text-forest-green font-semibold'}>Featured Post</span>
+                        <span className={'text-[64px] font-little-spark text-pink font-semibold'}>Featured Post</span>
                     </HStack>
                     <HStack className="justify-center py-4">
                         <HStack className="bg-white rounded justify-center p-8 space-x-4 border hover:shadow-lg cursor-pointer">

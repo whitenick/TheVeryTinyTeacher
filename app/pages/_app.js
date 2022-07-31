@@ -11,7 +11,7 @@ function MyApp({Component, pageProps}) {
             <Head>
                 <title>Tiny Teacher</title>
                 <link rel="apple icon" href="/favicon.ico"/>
-                <script async src="/mailer.js"></script>
+                <Script async src="/mailer.js"/>
             </Head>
             <ModalManager />
             <Component {...pageProps} />
