@@ -1,5 +1,5 @@
 import { HStack, VStack } from "./flexbox";
-import { FiInstagram, FiSearch } from "react-icons/fi";
+import { FiExternalLink, FiInstagram, FiSearch } from "react-icons/fi";
 import { FaPinterestP } from 'react-icons/fa';
 import React from "react";
 import { Buttons } from "./button";
@@ -68,7 +68,7 @@ const DesktopNav = (props) => {
             </HStack> */}
             <HStack className="p-2 space-x-4 justify-end w-full">
                 <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
-                    <FiInstagram className="w-full h-full text-white" />
+                    <FiInstagram className="w-[32px] h-[32px] text-white" />
                 </a>
                 {/* <a href="https://www.instagram.com/theverytinyteacher/" target={"_blank"}>
                     <FaPinterestP className="w-full h-full text-white" />
@@ -81,25 +81,37 @@ const DesktopNav = (props) => {
 const ShopDropdownButton: React.FC<{}> = () => {
     return (
         <DropdownMenu.Root>
-            <DropdownMenu.Trigger asChild>
-                <Buttons.Standard className="flex bg-deep-orange rounded-md px-2 hover:shadow-md">
+            <DropdownMenu.Trigger>
+                <Buttons.Standard className="flex h-full bg-deep-orange rounded-md px-2 hover:shadow-md">
                     <VStack className="h-full justify-end">
-                        {/* <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
-                            <img src="/Shop Icon.svg" />
-                            <span className="font-jim-pam text-3xl font-extrabold">SHOP</span>
-                        </a> */}
                         <img src="/Shop Icon.svg" />
                         <span className="font-jim-pam text-3xl font-extrabold">SHOP</span>
                     </VStack>
                 </Buttons.Standard>
             </DropdownMenu.Trigger>
 
-            <DropdownMenu.Content style={{ width: '200px' }}>
-                <DropdownMenu.Item>
-                    <div>Amazon Store Links</div>
+            <DropdownMenu.Content 
+                className="rounded shadow-lg p-6 bg-white"
+                style={{ 
+                    left: '0',
+                    zIndex: '1000'
+                }}
+            >
+                <DropdownMenu.Item className="py-2 text-deep-orange">
+                    <a href={""} target={"_blank"}>
+                        <HStack className="items-center space-x-4">
+                            <div>Amazon Store</div>
+                            <FiExternalLink/>
+                        </HStack>
+                    </a>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item>
-                    <div>Teachers Pay Teachers</div>
+                <DropdownMenu.Item className="py-2 text-deep-orange">
+                    <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
+                        <HStack className="items-center space-x-4">
+                            <div>Teachers Pay Teachers</div>
+                            <FiExternalLink/>
+                        </HStack>
+                    </a>
                 </DropdownMenu.Item>
             </DropdownMenu.Content>
 
@@ -128,7 +140,9 @@ export const HomeNav: React.FC<any> = (props) => {
                     <span className="font-jim-pam text-3xl font-extrabold">ABOUT ME</span>
                 </VStack>
             </Buttons.Standard>
-            <ShopDropdownButton />
+            <HStack>
+                <ShopDropdownButton />
+            </HStack>
             <Buttons.Standard
                 className="flex bg-pink rounded-md px-2 hover:shadow-md"
                 onClick={() => { router.push("/app/blog") }}

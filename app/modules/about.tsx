@@ -1,6 +1,47 @@
+import React from "react";
 import { HStack, VStack } from "../components/flexbox";
 import DesktopLayout from "../components/layout";
 import { DesktopHeader, HomeNav } from "../components/navbar";
+
+enum PicturePosition {
+    Left,
+    Right
+}
+
+const AboutSection: React.FC<{ title: string, body: string, picture?: React.ReactElement, picturePosition?: PicturePosition }> = (props) => {
+    return (
+        <VStack className={"items-center"}>
+            <HStack>
+                {props.picturePosition === PicturePosition.Left &&
+                    (
+                        <React.Fragment>
+                            <HStack className="px-4">
+                                { props.picture }
+                            </HStack>
+                        </React.Fragment>
+                    ) 
+                }
+                <VStack className="space-y-4">
+                    <HStack className={"text-3xl font-bold italic font-marion justify-center"}>
+                        {props.title}
+                    </HStack>
+                    <HStack className={"font-jim-pam text-2xl font-bold h-full items-center px-8"}>
+                        {props.body}
+                    </HStack>
+                </VStack>
+                {props.picturePosition === PicturePosition.Right &&
+                    (
+                        <React.Fragment>
+                            <HStack className="px-4">
+                                { props.picture }
+                            </HStack>
+                        </React.Fragment>
+                    ) 
+                }
+            </HStack>
+        </VStack>
+    )
+}
 
 const About = () => {
     const { aboutMeIntro, educationAndCareer, spareTime, theVeryTinyTeacher } = {
@@ -24,55 +65,34 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                 </HStack>
                 <HStack className="text-sea-green text-[100px] justify-center font-little-spark">About Me</HStack>
                 <HStack className={"m-auto grid w-[60vw] space-y-6 shadow-lg bg-pink rounded p-4 mb-[200px]"}>
-                    <VStack className={"items-center"}>
-                        <HStack>
-                            <VStack className="space-y-4">
-                                <HStack className={"text-3xl font-bold italic font-marion"}>
-                                    Hey, I'm Sarah Adler!
-                                </HStack>
-                                <HStack className={"font-jim-pam text-xl font-bold"}>
-                                    {aboutMeIntro}
-                                </HStack>
-                            </VStack>
-                            <HStack className="px-4">
-                                <img className="rounded" src="/about_me_1.png" />
-                            </HStack>
-                        </HStack>
-                    </VStack>
-                    <VStack className={"items-center"}>
-                        <HStack className={"text-3xl italic font-bold font-marion p-4"}>
-                            Education & Career
-                        </HStack>
-                        <HStack>
-                            <HStack className="px-4">
-                                <img className="rounded min-w-[400px]" src="/me teaching.jpg" />
-                            </HStack>
-                            <HStack className={"font-jim-pam text-xl font-bold"}>
-                                {educationAndCareer}
-                            </HStack>
-                        </HStack>
-                    </VStack>
-                    <VStack className={"items-center"}>
-                        <HStack className={"text-3xl italic font-bold font-marion p-4"}>
-                            In my spare time...
-                        </HStack>
-                        <HStack>
-                            <HStack className={"font-jim-pam text-xl font-bold"}>
-                                {spareTime}
-                            </HStack>
-                            <HStack className="px-4">
-                                <img className="rounded min-w-[20vw]" src="/me travelling.jpg" />
-                            </HStack>
-                        </HStack>
-                    </VStack>
-                    <VStack className={"items-center"}>
-                        <HStack className={"text-3xl italic font-bold font-marion p-4"}>
-                            The Very Tiny Teacher
-                        </HStack>
-                        <HStack className={"font-jim-pam text-xl font-bold"}>
-                            {theVeryTinyTeacher}
-                        </HStack>
-                    </VStack>
+                    <AboutSection
+                        title={" Hey, I'm Sarah Adler!"}
+                        body={aboutMeIntro}
+                        picture={(
+                            <img className="rounded" src="/about_me_1.png" />
+                        )}
+                        picturePosition={PicturePosition.Right}
+                    />
+                    <AboutSection
+                        title={"Education & Career"}
+                        body={educationAndCareer}
+                        picture={(
+                            <img className="rounded min-w-[400px]" src="/me teaching.jpg" />
+                        )}
+                        picturePosition={PicturePosition.Left}
+                    />
+                    <AboutSection
+                        title={"In my spare time..."}
+                        body={spareTime}
+                        picture={(
+                            <img className="rounded min-w-[20vw]" src="/me travelling.jpg" />
+                        )}
+                        picturePosition={PicturePosition.Right}
+                    />
+                    <AboutSection
+                        title={"The Very Tiny Teacher"}
+                        body={theVeryTinyTeacher}
+                    />
                     <HStack className={"items-center justify-center"}>
                         <HStack className={"w-600 h-600"}>
                             <img className='w-full h-full' src="/me on laptop.jpg" />

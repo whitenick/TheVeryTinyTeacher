@@ -4,7 +4,7 @@ import { FiX } from 'react-icons/fi';
 import { HStack } from './flexbox';
 
 const ModalManager = () => (
-    <Dialog.Root defaultOpen={true}>
+    <Dialog.Root defaultOpen={false}>
         <Dialog.Overlay
             style={{
                 zIndex: 10000
