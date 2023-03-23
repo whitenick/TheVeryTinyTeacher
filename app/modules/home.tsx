@@ -5,8 +5,12 @@ import { Buttons } from '../components/button';
 import { HStack, VStack } from '../components/flexbox';
 import DesktopLayout from '../components/layout';
 import { DesktopHeader, HomeNav } from '../components/navbar';
+import { useGetLatestBlogQuery } from '../src/generated/graphql';
+import { BlogPost, BlogPreview } from './blog/blog';
 
 const Home: React.FC<any> = ({ }) => {
+    const { data, loading } = useGetLatestBlogQuery();
+
     return (
         <DesktopLayout>
             <VStack className={'justify-center'} >
@@ -50,16 +54,15 @@ const Home: React.FC<any> = ({ }) => {
                         <img className='w-[100vw] rounded' src="/4.svg" />
                     </Carousel>
                 </HStack>
-                <VStack className="bg-white">
+                <VStack className="bg-white py-12">
                     <HStack className={"justify-center py-4 space-x-8"}>
                         <span className={'text-[64px] font-little-spark text-pink font-semibold'}>Featured Post</span>
                     </HStack>
                     <HStack className="justify-center py-4">
-                        <HStack className="bg-white rounded justify-center p-8 space-x-4 border hover:shadow-lg cursor-pointer">
-                            <HStack>
-                                Placeholder Image
-                            </HStack>
-                            <HStack>Blog post description goes here</HStack>
+                        <HStack className="bg-white rounded justify-center p-8 space-x-4">
+                            <BlogPreview
+                                blog={data?.latestBlog}
+                            />
                         </HStack>
                     </HStack>
                 </VStack>

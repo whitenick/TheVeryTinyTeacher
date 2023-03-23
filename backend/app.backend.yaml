@@ -1,7 +1,7 @@
 env: standard
-runtime: nodejs16
-service: default
+runtime: go116
+service: backend
 handlers:
-  - url: /app/.*
+  - url: /api/.*
     secure: always
     script: auto

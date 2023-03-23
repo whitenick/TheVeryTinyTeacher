@@ -1,0 +1,26 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Query {
+  blogs: [Blog]
+  latestBlog: Blog
+}
+
+type Mutation {
+  upsertBlog(input: BlogInput!): Blog!
+}
+
+type Blog {
+  id: ID
+  title: String
+  description: String
+  date: String
+  pictures: [String]
+}
+
+input BlogInput {
+  title: String
+  description: String
+  date: String
+}

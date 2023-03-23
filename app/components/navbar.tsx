@@ -91,14 +91,16 @@ const ShopDropdownButton: React.FC<{}> = () => {
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Content 
-                className="rounded shadow-lg p-6 bg-white"
+                className="rounded shadow-lg p-6 bg-white lleft-[50px]"
                 style={{ 
-                    left: '0',
+                    left: '-62px',
+                    position: 'absolute',
+                    width: '250px',
                     zIndex: '1000'
                 }}
             >
                 <DropdownMenu.Item className="py-2 text-deep-orange">
-                    <a href={""} target={"_blank"}>
+                    <a href={"https://l.instagram.com/?u=https%3A%2F%2Finstabio.cc%2FTheVeryTinyTeacher&e=ATMkiG0sfdrdEVnNf8qrFbvMGvare5TKpGRZlwyBd6_9W4rdhznbfaUfCt57lP5LJD0gKiWmAJtxNmdf&s=1"} target={"_blank"}>
                         <HStack className="items-center space-x-4">
                             <div>Amazon Store</div>
                             <FiExternalLink/>
@@ -145,7 +147,7 @@ export const HomeNav: React.FC<any> = (props) => {
             </HStack>
             <Buttons.Standard
                 className="flex bg-pink rounded-md px-2 hover:shadow-md"
-                onClick={() => { router.push("/app/blog") }}
+                onClick={() => { router.push("/app/blogs") }}
             >
                 <VStack className="h-full justify-end">
                     <img src="/Blog Icon.svg" />

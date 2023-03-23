@@ -1,0 +1,8 @@
+dispatch:
+  # send all frontend traffic to nextJs app
+  - url: "*/app/*"
+    service: default
+
+  # send all api requests to go backend
+  - url: "*/api/*"
+    service: backend
