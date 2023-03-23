@@ -1,0 +1,19 @@
+query GetAllBlogs {
+    blogs {
+        id
+        title
+        description
+        date
+        pictures
+    }
+}
+
+query GetLatestBlog {
+    latestBlog {
+        id
+        title 
+        description 
+        date
+        pictures
+    }
+}

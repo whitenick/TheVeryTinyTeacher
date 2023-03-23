@@ -23,6 +23,7 @@ module.exports = {
       "pink": "#e3c7b9",
       "white": "#ffffff",
       "powder-blue": "#e9fffeff",
+      "sky-blue": "#00c9fd",
       "sea-green": "#cdd5beff",
       "deep-orange": "#c56f25ff",
       "forest-green": "#73A276",

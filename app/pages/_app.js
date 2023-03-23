@@ -1,9 +1,10 @@
-import React from 'react'
-import '../styles/globals.css'
+import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
 import Head from 'next/head';
-import ModalManager from '../components/modal.service';
-import './tw.css';
 import Script from 'next/script';
+import React from 'react';
+import ModalManager from '../components/modal.service';
+import '../styles/globals.css';
+import './tw.css';
 
 const scriptFunction = () => {
     (function (w, d, e, u, f, l, n) {
@@ -17,7 +18,22 @@ const scriptFunction = () => {
     ml('account', '107741')
 }
 
+const httpLink = new HttpLink({
+    uri: process.env.NEXT_PUBLIC_IS_LOCAL === 'true' ? 'http://localhost:8080/api/query' : '/api/query',
+    credentials: 'include',
+    fetchOptions: {
+        mode: 'cors',
+    },
+  });
+
+  
+  const apolloClient = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache()
+  });
+
 function MyApp({ Component, pageProps }) {
+    console.log(process.env.NEXT_PUBLIC_IS_LOCAL)
     return (
         <React.Fragment>
             <Head>
@@ -48,7 +64,9 @@ function MyApp({ Component, pageProps }) {
 
             </Head>
             <ModalManager />
-            <Component {...pageProps} />
+            <ApolloProvider client={apolloClient}>
+                <Component {...pageProps} />
+            </ApolloProvider>
         </React.Fragment>
     )
 }

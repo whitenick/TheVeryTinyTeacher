@@ -4,19 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
         {
-            "name": "Launch via NPM",
+            "name": "Launch Package",
+            "type": "go",
             "request": "launch",
-            "runtimeArgs": [
-                "run",
-                "dev"
-            ],
-            "runtimeExecutable": "npm",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "pwa-node"
+            "mode": "auto",
+            "program": "./"
         }
     ]
 }
