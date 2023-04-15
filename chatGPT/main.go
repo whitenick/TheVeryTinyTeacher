@@ -7,7 +7,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -15,9 +14,15 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/sashabaranov/go-openai"
+	"jobin/chatGPT/resources"
 )
 
 func main() {
+	// chatGPT(os.Getenv("OPENAI_API_KEY"))
+	resources.Decibel()
+}
+
+func chatGPT(apiKey string) {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
@@ -29,10 +34,6 @@ func main() {
 	}
 
 	fmt.Println(result)
-	chatGPT(os.Getenv("OPENAI_API_KEY"))
-}
-
-func chatGPT(apiKey string) {
 	client := openai.NewClient(apiKey)
 	messages := make([]openai.ChatCompletionMessage, 0)
 	reader := bufio.NewReader(os.Stdin)
@@ -84,7 +85,7 @@ type ClipResponse struct {
 func GetRecipeDescriptionFromImage(imageFilePath string, apiKey string) (string, error) {
 	// Read in the image file
 	log.Println(imageFilePath)
-	imageBytes, err := ioutil.ReadFile(imageFilePath)
+	imageBytes, err := os.ReadFile(imageFilePath)
 	if err != nil {
 		return "", err
 	}
