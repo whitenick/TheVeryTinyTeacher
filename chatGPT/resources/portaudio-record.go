@@ -9,17 +9,17 @@ import (
 	"strings"
 )
 
-func PortAudioRecord() {
-	if len(os.Args) < 2 {
-		fmt.Println("missing required argument:  output file name")
-		return
-	}
+func PortAudioRecord(name string) {
+	// if len(os.Args) < 2 {
+	// 	fmt.Println("missing required argument:  output file name")
+	// 	return
+	// }
 	fmt.Println("Recording.  Press Ctrl-C to stop.")
 
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, os.Kill)
 
-	fileName := os.Args[1]
+	fileName := name
 	if !strings.HasSuffix(fileName, ".aiff") {
 		fileName += ".aiff"
 	}

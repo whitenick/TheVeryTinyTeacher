@@ -56,7 +56,7 @@ export const DesktopHeader: React.FC<any> = (props) => {
 
 const DesktopNav = (props) => {
     return (
-        <HStack className={"bg-pink w-full h-12 px-4 shadow-md"}>
+        <HStack className={"bg-pink w-full h-12 px-4 shadow-md sticky top-[-5px]"}>
             {/* <HStack className="space-x-2 w-full items-center">
                 {sections.map((item, index) => {
                     return (

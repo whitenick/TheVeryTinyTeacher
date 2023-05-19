@@ -16,7 +16,8 @@ module.exports = {
         'jim-pam': ['jim-pam'],
         'little-spark': ['little-spark'],
         'boom-roasted': ['boom-roasted'],
-        'marion': ['marion']
+        'marion': ['marion'],
+        'lobster': ['lobster']
       }
     },
     colors: {
@@ -27,7 +28,8 @@ module.exports = {
       "sea-green": "#cdd5beff",
       "deep-orange": "#c56f25ff",
       "forest-green": "#73A276",
-      "mint-cream": "#EFF8F0"
+      "mint-cream": "#EFF8F0",
+      "bone": "#FDFBFA"
     }
   },
   plugins: [],

@@ -451,6 +451,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   src: url("../public/BBBoomRoasted.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'lobster';
+
+  src: url("../public/Lobster-Regular.ttf") format("truetype");
+}
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -528,12 +534,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 50%;
 }
 
+.top-\[-5px\] {
+  top: -5px;
+}
+
 .top-0 {
   top: 0px;
 }
 
 .m-auto {
   margin: auto;
+}
+
+.m-8 {
+  margin: 2rem;
 }
 
 .mx-auto {
@@ -593,8 +607,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 60vw;
 }
 
-.w-\[100vw\] {
-  width: 100vw;
+.w-\[70\%\] {
+  width: 70%;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .w-\[100\%\] {
@@ -603,6 +621,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[80vw\] {
   width: 80vw;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .min-w-\[400px\] {
@@ -649,6 +671,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -730,6 +756,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-pink {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 199 185 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -738,6 +773,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\!border-pink {
   --tw-border-opacity: 1 !important;
   border-color: rgb(227 199 185 / var(--tw-border-opacity)) !important;
+}
+
+.border-\[\#F4F3F2\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(244 243 242 / var(--tw-border-opacity));
+}
+
+.border-opacity-10 {
+  --tw-border-opacity: 0.1;
+}
+
+.border-opacity-5 {
+  --tw-border-opacity: 0.05;
 }
 
 .bg-pink {
@@ -808,9 +856,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2rem;
 }
 
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.px-64 {
+  padding-left: 16rem;
+  padding-right: 16rem;
 }
 
 .py-12 {
@@ -826,6 +879,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .pl-6 {
@@ -852,6 +915,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: little-spark;
 }
 
+.font-lobster {
+  font-family: lobster;
+}
+
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
@@ -872,6 +939,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-\[64px\] {
   font-size: 64px;
+}
+
+.text-\[32px\] {
+  font-size: 32px;
 }
 
 .text-xl {
@@ -934,9 +1005,51 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.outline-1 {
+  outline-width: 1px;
+}
+
+.outline-\[\] {
+  outline-width: ;
+}
+
+.outline-offset-2 {
+  outline-offset: 2px;
+}
+
+.outline-bone {
+  outline-color: #FDFBFA;
+}
+
+.outline-deep-orange {
+  outline-color: #c56f25ff;
+}
+
+.outline-pink {
+  outline-color: #e3c7b9;
+}
+
+.outline-\[\#F4F\] {
+  outline-color: #F4F;
+}
+
+.outline-\[\#F4F3F2\] {
+  outline-color: #F4F3F2;
 }
 
 .hover\:bg-\[\#F9F9FA\]:hover {

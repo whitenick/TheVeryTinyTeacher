@@ -6,7 +6,8 @@ const DesktopLayout = (props) => {
     return (
         <div
             className={
-                "grid grid-rows-[1fr]" 
+                // "grid grid-rows-[1fr]" 
+                "flex flex-col"
             }
         >
             <NavBar />

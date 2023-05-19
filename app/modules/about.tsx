@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { HStack, VStack } from "../components/flexbox";
 import DesktopLayout from "../components/layout";
 import { DesktopHeader, HomeNav } from "../components/navbar";
+import { usePocket } from "../database";
+import { PostsRecord } from "../src/generated/db-types";
 
 enum PicturePosition {
     Left,
@@ -54,6 +56,17 @@ Born and raised in New York - the north east will always have a special place in
         theVeryTinyTeacher: `The Very Tiny Teacher began during the COVID-19 pandemic, in 2020. During quarantine, I created endless virtual resources for the new realm of online teaching we all had to endure. I found comfort in knowing I could help other teachers by sharing my resources. Since then, I’ve been creating virtual & non-virtual resources to sell on my 
 teachers pay teachers page. I work my hardest to make sure my resources are quality products that explicitly teach standards while bringing fun to the classroom. I love to share my classroom experiences and resources on my Instagram & Pinterest account. I hope you’ll follow along with my journey!`
     }
+    const [posts, setPosts] = useState<PostsRecord[]>();
+    const pocket = usePocket();
+    
+    useMemo(() => {
+        if (!pocket.user) {
+            pocket.login("nw.white22@gmail.com", "serapio22@");
+        } else {
+            pocket.findAll("posts").then(res => setPosts(res?.items)).catch(err => console.log(err));
+        }
+    }, [pocket.user]);
+
     return (
         <DesktopLayout>
             <VStack>
@@ -64,6 +77,13 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                     </HStack>
                 </HStack>
                 <HStack className="text-sea-green text-[100px] justify-center font-little-spark">About Me</HStack>
+                { posts?.length > 0 && 
+                    posts.map(post => {
+                        return (
+                            <div dangerouslySetInnerHTML={{ __html: post.body }} />
+                        )
+                    })
+                }
                 <HStack className={"m-auto grid w-[60vw] space-y-6 shadow-lg bg-pink rounded p-4 mb-[200px]"}>
                     <AboutSection
                         title={" Hey, I'm Sarah Adler!"}

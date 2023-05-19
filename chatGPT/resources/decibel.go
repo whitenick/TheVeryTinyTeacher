@@ -303,7 +303,7 @@ func Decibel() {
 	// err := PlayAudio()
 	// err := PlayBeepAudio()
 	PortAudio("test.wav.aiff")
-	PortAudioRecord()
+	// PortAudioRecord("test.aiff")
 	// if err != nil {
 	// 	fmt.Println("Error recording audio:", err)
 	// }

@@ -31,6 +31,13 @@
     }
 }
 
+@layer base {
+    @font-face {
+        font-family: 'lobster';
+        src: url("../public/Lobster-Regular.ttf") format("truetype");
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

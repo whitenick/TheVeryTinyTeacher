@@ -3,5 +3,5 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  // basePath: '/app'
+  basePath: '/app'
 }

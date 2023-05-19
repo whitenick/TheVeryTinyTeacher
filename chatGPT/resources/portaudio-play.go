@@ -56,9 +56,16 @@ func PortAudio(fileName string) {
 
 	//assume 44100 sample rate, mono, 32 bit
 
-	portaudio.Initialize()
+	err = portaudio.Initialize()
+
+	if err != nil {
+		println("Error: %s", err)
+	}
+
 	defer portaudio.Terminate()
 	out := make([]int32, 8192)
+	// TODO: For Linux system, find error in default output device 
+	// https://www.alsa-project.org/alsa-doc/alsa-lib/index.html
 	stream, err := portaudio.OpenDefaultStream(0, 1, 44100, len(out), &out)
 	chk(err)
 	defer stream.Close()

@@ -1,4 +1,5 @@
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+import { PocketProvider } from '../database';
 import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
@@ -39,12 +40,6 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <title>Tiny Teacher</title>
                 <link rel="apple icon" href="/favicon.ico" />
-                {/* <Script src="/mailer.js" type="text/javascript"/> */}
-                {/* {(typeof window !== "undefined") &&
-                    <script>
-                        {scriptFunction}
-                    </script>
-                } */}
                 <Script
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
@@ -65,7 +60,9 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <ModalManager />
             <ApolloProvider client={apolloClient}>
-                <Component {...pageProps} />
+                <PocketProvider>
+                    <Component {...pageProps} />
+                </PocketProvider>
             </ApolloProvider>
         </React.Fragment>
     )
