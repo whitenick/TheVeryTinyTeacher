@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	println("hello")
 	app := pocketbase.New()
 
 	if err := app.Start(); err != nil {

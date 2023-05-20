@@ -52,7 +52,7 @@ export const PocketProvider = ({children}) => {
 
     const refreshSession = useCallback(async () => {
         if (!pb.authStore.isValid) return;
-        const decoded = jwtDecode(token);
+        const decoded : { exp: any }= jwtDecode(token);
         const tokenExpiration = decoded?.exp;
         const expirationWithBuffer = (decoded?.exp + fiveMinutesInMs) / 1000;
         if (tokenExpiration < expirationWithBuffer) {
