@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { VStack } from "../../components/flexbox";
-import GaugeChart from 'react-gauge-chart';
+// import GaugeChart from 'react-gauge-chart';
 import DesktopLayout from '../../components/layout';
 import { useLoudContext } from './atom';
 
@@ -42,7 +42,7 @@ const Gauge = () => {
     return (
         <DesktopLayout>
             <VStack className={"bg-neutral-400 h-full w-[80vw] items-center"}>
-                <GaugeChart
+                {/* <GaugeChart
                     id={"loud-chart-1"}
                     nrOfLevels={10}
                     arcWidth={0.3}
@@ -53,7 +53,7 @@ const Gauge = () => {
                         width: '100%',
                         display: 'flex'
                     }}
-                />
+                /> */}
             </VStack>
         </DesktopLayout>
     )
