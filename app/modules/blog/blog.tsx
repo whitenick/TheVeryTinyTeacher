@@ -8,6 +8,7 @@ import DesktopLayout from '../../components/layout';
 import { DesktopHeader, HomeNav } from '../../components/navbar';
 import { Blog, useGetAllBlogsQuery } from '../../src/generated/graphql';
 import { BlogDocument } from '../../prismicio-types';
+import { RTTextNode } from '@prismicio/client';
 
 const FilterButton: React.FC<{ text: string }> = (props) => {
     return (
@@ -128,8 +129,8 @@ export const BlogsList = (props : {
                                     <BlogPreview
                                         blog={{
                                             id: d?.id,
-                                            title: d?.data?.title?.[0]?.text,
-                                            description: d?.data?.body?.[0]?.text,
+                                            title: (d?.data?.title?.[0] as RTTextNode)?.text,
+                                            description: (d?.data?.body?.[0] as RTTextNode)?.text,
                                             date: d?.data?.publish_date
                                         }}
                                     />
