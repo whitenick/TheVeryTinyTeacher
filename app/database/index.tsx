@@ -5,7 +5,7 @@ import jwtDecode from "jwt-decode";
 import { useInterval } from "usehooks-ts";
 import { PostsRecord } from '../src/generated/db-types';
 
-const BASE_URL = "http://127.0.0.1:8090";
+const BASE_URL = process.env.NEXT_PUBLIC_IS_LOCAL === 'true' ? "http://127.0.0.1:8090" : "/api";
 const fiveMinutesInMs = ms("5 minutes");
 const twoMinutesInMs = ms("2 minutes");
 
