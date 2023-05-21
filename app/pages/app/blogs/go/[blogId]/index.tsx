@@ -1,8 +1,8 @@
-import BlogPage from "../../../../modules/blog/blog-page";
+import BlogPage from "../../../../../modules/blog/blog-page";
 
 const Page = () => {
     return (
-        <BlogPage />
+        <BlogPage blog={null}/>
     )
 }
 
