@@ -8,6 +8,7 @@ import { useGetLatestBlogQuery } from "../../src/generated/graphql";
 import { BlogPost } from "./blog";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { BlogDocument } from "../../prismicio-types";
+import { RTTextNode } from "@prismicio/client";
 
 const BlogPage = (props: {blog: BlogDocument}) => {
     const { data, loading } = useGetLatestBlogQuery();
@@ -36,9 +37,9 @@ const BlogPage = (props: {blog: BlogDocument}) => {
                 <HStack className="w-full justify-center">
                     <BlogPost
                         date={props.blog.first_publication_date}
-                        title={props.blog.data?.title?.[0]?.text}
-                        pictures={[props.blog.data?.body[0]?.text]}
-                        description={props.blog.data?.body[0]?.text}
+                        title={(props.blog.data?.title?.[0] as RTTextNode)?.text}
+                        pictures={[]}
+                        description={(props.blog.data?.body[0] as RTTextNode)?.text}
                     />
                 </HStack>
             </VStack>
