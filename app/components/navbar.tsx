@@ -56,7 +56,7 @@ export const DesktopHeader: React.FC<any> = (props) => {
 
 const DesktopNav = (props) => {
     return (
-        <HStack className={"bg-pink w-full h-12 px-4 shadow-md sticky top-[-5px]"}>
+        <HStack className={"bg-pink w-full h-12 px-4 shadow-md sticky top-[-5px] z-50"}>
             {/* <HStack className="space-x-2 w-full items-center">
                 {sections.map((item, index) => {
                     return (
@@ -82,12 +82,12 @@ const ShopDropdownButton: React.FC<{}> = () => {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger>
-                <Buttons.Standard className="flex h-full bg-deep-orange rounded-md px-2 hover:shadow-md">
+                <div className="flex h-full bg-deep-orange rounded-md px-2 hover:shadow-md">
                     <VStack className="h-full justify-end">
                         <img src="/Shop Icon.svg" />
                         <span className="font-jim-pam text-3xl font-extrabold">SHOP</span>
                     </VStack>
-                </Buttons.Standard>
+                </div>
             </DropdownMenu.Trigger>
 
             <DropdownMenu.Content 

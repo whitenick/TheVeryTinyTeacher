@@ -7,7 +7,7 @@ const DesktopLayout = (props) => {
         <div
             className={
                 // "grid grid-rows-[1fr]" 
-                "flex flex-col"
+                "flex flex-col bg-[#fdfafa] h-[100vh]"
             }
         >
             <NavBar />

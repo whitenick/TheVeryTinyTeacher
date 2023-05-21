@@ -20,14 +20,14 @@ const Home: React.FC<any> = ({ }) => {
                     <DesktopHeader />
                     <HomeNav />
                 </HStack>
-                <HStack className="flex flex-col py-16 px-64 gap-y-4 border-t border-[#F4F3F2]">
+                <HStack className="flex flex-col py-16 px-64 gap-y-4">
                     <span className="font-lobster font-semibold text-pink text-[64px]">sarah adler</span>
                     <span className="font-jim-pam text-pink text-[32px] w-[70%]">A very fine teacher.A fantastic teacher . Some say the best of the rest  Checkout her materials and blog insights here.</span>
                     <Buttons.Standard className="border border-pink rounded-md w-[100px] shadow">
                         <span className="font-lobster text-pink">Latest Blog</span>
                     </Buttons.Standard>
                 </HStack>
-                <HStack className="flex flex-col items-center outline outline-offset-2 outline-1 outline-[#F4F3F2] py-12">
+                <HStack className="flex flex-col items-center border-t border-[#f8d9d9] py-12">
                     <span className="font-lobster font-semibold text-pink text-[64px]">resources</span>
 
                     <HStack className='px-16 justify-center'>
@@ -67,12 +67,12 @@ const Home: React.FC<any> = ({ }) => {
                         </Carousel>
                     </HStack>
                 </HStack>
-                <VStack className="bg-white py-12 outline outline-offset-2 outline-1 outline-[#F4F3F2]">
+                <VStack className="py-12 border-t border-[#f8d9d9]">
                     <HStack className={"justify-center py-4 space-x-8"}>
                         <span className={'text-[64px] font-lobster text-pink font-semibold'}>featured post</span>
                     </HStack>
                     <HStack className="justify-center py-4">
-                        <HStack className="bg-white rounded justify-center p-8 space-x-4">
+                        <HStack className="rounded justify-center p-8 space-x-4">
                             <BlogPreview
                                 blog={data?.latestBlog}
                             />

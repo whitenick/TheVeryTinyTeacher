@@ -6,6 +6,8 @@ import React from 'react';
 import ModalManager from '../components/modal.service';
 import '../styles/globals.css';
 import './tw.css';
+import { repositoryName } from '../prismicio';
+import { PrismicPreview } from '@prismicio/next';
 
 const scriptFunction = () => {
     (function (w, d, e, u, f, l, n) {
@@ -61,7 +63,9 @@ function MyApp({ Component, pageProps }) {
             <ModalManager />
             <ApolloProvider client={apolloClient}>
                 <PocketProvider>
-                    <Component {...pageProps} />
+                    <PrismicPreview repositoryName={repositoryName}>
+                        <Component {...pageProps} />
+                    </PrismicPreview>
                 </PocketProvider>
             </ApolloProvider>
         </React.Fragment>
