@@ -27,13 +27,13 @@ const httpLink = new HttpLink({
     fetchOptions: {
         mode: 'cors',
     },
-  });
+});
 
-  
-  const apolloClient = new ApolloClient({
+
+const apolloClient = new ApolloClient({
     link: httpLink,
     cache: new InMemoryCache()
-  });
+});
 
 function MyApp({ Component, pageProps }) {
     console.log(process.env.NEXT_PUBLIC_IS_LOCAL)
@@ -62,11 +62,14 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <ModalManager />
             <ApolloProvider client={apolloClient}>
-                <PocketProvider>
+                <PrismicPreview repositoryName={repositoryName}>
+                    <Component {...pageProps} />
+                </PrismicPreview>
+                {/* <PocketProvider>
                     <PrismicPreview repositoryName={repositoryName}>
                         <Component {...pageProps} />
                     </PrismicPreview>
-                </PocketProvider>
+                </PocketProvider> */}
             </ApolloProvider>
         </React.Fragment>
     )
