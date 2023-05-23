@@ -24,4 +24,4 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /backend
 EXPOSE 8080
 
 # Run
-CMD ["/backend", "serve", "--http=127.0.0.1:8080"]
+CMD ["/backend", "serve", "--http=0.0.0.0:8080"]

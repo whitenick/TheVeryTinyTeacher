@@ -57,15 +57,15 @@ Born and raised in New York - the north east will always have a special place in
 teachers pay teachers page. I work my hardest to make sure my resources are quality products that explicitly teach standards while bringing fun to the classroom. I love to share my classroom experiences and resources on my Instagram & Pinterest account. I hope you’ll follow along with my journey!`
     }
     const [posts, setPosts] = useState<PostsRecord[]>();
-    const pocket = usePocket();
+    // const pocket = usePocket();
     
-    useMemo(() => {
-        if (!pocket.user) {
-            pocket.login("nw.white22@gmail.com", "serapio22@");
-        } else {
-            pocket.findAll("posts").then(res => setPosts(res?.items)).catch(err => console.log(err));
-        }
-    }, [pocket.user]);
+    // useMemo(() => {
+    //     if (!pocket?.user) {
+    //         pocket?.login("nw.white22@gmail.com", "serapio22@");
+    //     } else {
+    //         pocket?.findAll("posts").then(res => setPosts(res?.items)).catch(err => console.log(err));
+    //     }
+    // }, [pocket?.user]);
 
     return (
         <DesktopLayout>

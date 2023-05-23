@@ -4,5 +4,7 @@ dispatch:
     service: default
 
   # send all api requests to go backend
-  - url: "*/api/*"
+  - url: "*/api"
+    service: backend
+  - url : "*/_"
     service: backend

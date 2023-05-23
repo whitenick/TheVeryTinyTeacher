@@ -4,6 +4,35 @@
 
 /*@import "tailwindcss/utilities";*/
 
+/* @layer base {
+    @font-face {
+        font-family: 'jim-pam';
+        src: url("../public/BBPAMJIM4EVER.ttf") format("truetype");
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'little-spark';
+        src: url("../public/KGALittleSpark.ttf") format("truetype");
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'marion';
+        src: url("../public/Marion_Regular.ttf") format("truetype");
+    }
+}
+
+
+@layer base {
+    @font-face {
+        font-family: 'boom-roasted';
+        src: url("../public/BBBoomRoasted.ttf") format("truetype");
+    }
+} */
+
 /*! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com*/
 
 /*
@@ -456,6 +485,18 @@ video {
   src: url("../public/Lobster-Regular.ttf") format("truetype");
 }
 
+h1 {
+  font-family: 'lobster'
+}
+
+p {
+  font-family: 'jim-pam'
+}
+
+div {
+  font-family: 'marion'
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -576,6 +617,10 @@ video {
   inset: 0px;
 }
 
+.-top-\[50px\] {
+  top: -50px;
+}
+
 .left-1\/2 {
   left: 50%;
 }
@@ -590,6 +635,26 @@ video {
 
 .top-\[-5px\] {
   top: -5px;
+}
+
+.top-\[50px\] {
+  top: 50px;
+}
+
+.top-\[0px\] {
+  top: 0px;
+}
+
+.top-\[-25px\] {
+  top: -25px;
+}
+
+.top-\[-45px\] {
+  top: -45px;
+}
+
+.top-\[-50px\] {
+  top: -50px;
 }
 
 .z-50 {
@@ -1060,6 +1125,26 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
 }
 
 .hover\:bg-\[\#F9F9FA\]:hover {
