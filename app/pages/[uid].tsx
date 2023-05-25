@@ -1,10 +1,10 @@
-import DesktopLayout from "../components/layout";
+import DefaultLayout from "../components/layout";
 
 const Page = () => {
     return (
-        <DesktopLayout>
+        <DefaultLayout>
             <div>Hello World</div>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }
 

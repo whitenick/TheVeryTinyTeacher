@@ -3,8 +3,8 @@ import React from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Buttons } from '../components/button';
 import { HStack, VStack } from '../components/flexbox';
-import DesktopLayout from '../components/layout';
-import { DesktopHeader, HomeNav } from '../components/navbar';
+import { DefaultLayout } from '../components/layout';
+import NavBar, { DesktopHeader, HomeNav } from '../components/navbar';
 import { useGetLatestBlogQuery } from '../src/generated/graphql';
 import { BlogPost, BlogPreview } from './blog/blog';
 
@@ -14,15 +14,16 @@ const Home: React.FC<any> = ({ }) => {
     const { data, loading } = useGetLatestBlogQuery();
 
     return (
-        <DesktopLayout>
+        <DefaultLayout>
+            <NavBar />
             <VStack className={'justify-center'} >
                 <HStack className={"py-8 shadow"}>
-                    <DesktopHeader />
+                    {/* <DesktopHeader /> */}
                     <HomeNav />
                 </HStack>
                 <HStack className="flex flex-col py-16 px-64 gap-y-4">
-                    <span className="font-lobster font-semibold text-pink text-[64px]">sarah adler</span>
-                    <span className="font-jim-pam text-pink text-[32px] w-[70%]">A very fine teacher.A fantastic teacher . Some say the best of the rest  Checkout her materials and blog insights here.</span>
+                    <span className="font-lobster font-bold text-pink text-[64px]">sarah adler</span>
+                    <span className="font-jim-pam text-pink font-semibold text-[32px] w-[70%]">A very fine teacher. A fantastic teacher. Some say the best of the rest. Checkout her materials and blog insights here.</span>
                     <Buttons.Standard className="border border-pink rounded-md w-[100px] shadow">
                         <span className="font-lobster text-pink">Latest Blog</span>
                     </Buttons.Standard>
@@ -80,7 +81,7 @@ const Home: React.FC<any> = ({ }) => {
                     </HStack>
                 </VStack>
             </VStack>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }
 

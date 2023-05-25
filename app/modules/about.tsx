@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { HStack, VStack } from "../components/flexbox";
-import DesktopLayout from "../components/layout";
+import DefaultLayout from "../components/layout";
 import { DesktopHeader, HomeNav } from "../components/navbar";
 import { usePocket } from "../database";
 import { PostsRecord } from "../src/generated/db-types";
@@ -68,8 +68,8 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
     // }, [pocket?.user]);
 
     return (
-        <DesktopLayout>
-            <VStack>
+        <DefaultLayout>
+            <VStack className="px-32">
                 <HStack className={"py-4"}>
                     <DesktopHeader />
                     <HStack className={"w-full justify-center py-4"}>
@@ -84,7 +84,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                         )
                     })
                 }
-                <HStack className={"m-auto grid w-[60vw] space-y-6 shadow-lg bg-pink rounded p-4 mb-[200px]"}>
+                <HStack className={"grid space-y-6 shadow-lg bg-pink rounded p-4 mb-[200px]"}>
                     <AboutSection
                         title={" Hey, I'm Sarah Adler!"}
                         body={aboutMeIntro}
@@ -120,7 +120,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
                     </HStack>
                 </HStack>
             </VStack>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }
 

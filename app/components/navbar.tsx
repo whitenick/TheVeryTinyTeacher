@@ -56,26 +56,26 @@ export const DesktopHeader: React.FC<any> = (props) => {
 
 const useScrollDirection = () => {
     const [scrollDirection, setScrollDirection] = useState(null);
-  
+
     useEffect(() => {
-      let lastScrollY = window.pageYOffset;
-  
-      const updateScrollDirection = () => {
-        const scrollY = window.pageYOffset;
-        const direction = scrollY > lastScrollY ? "down" : "up";
-        if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
-          setScrollDirection(direction);
+        let lastScrollY = window.pageYOffset;
+
+        const updateScrollDirection = () => {
+            const scrollY = window.pageYOffset;
+            const direction = scrollY > lastScrollY ? "down" : "up";
+            if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+                setScrollDirection(direction);
+            }
+            lastScrollY = scrollY > 0 ? scrollY : 0;
+        };
+        window.addEventListener("scroll", updateScrollDirection); // add event listener
+        return () => {
+            window.removeEventListener("scroll", updateScrollDirection); // clean up
         }
-        lastScrollY = scrollY > 0 ? scrollY : 0;
-      };
-      window.addEventListener("scroll", updateScrollDirection); // add event listener
-      return () => {
-        window.removeEventListener("scroll", updateScrollDirection); // clean up
-      }
     }, [scrollDirection]);
-  
+
     return scrollDirection;
-  };
+};
 
 const DesktopNav = (props) => {
     const scrollDirection = useScrollDirection();
@@ -115,9 +115,9 @@ const ShopDropdownButton: React.FC<{}> = () => {
                 </div>
             </DropdownMenu.Trigger>
 
-            <DropdownMenu.Content 
+            <DropdownMenu.Content
                 className="rounded shadow-lg p-6 bg-white lleft-[50px]"
-                style={{ 
+                style={{
                     left: '-62px',
                     position: 'absolute',
                     width: '250px',
@@ -128,7 +128,7 @@ const ShopDropdownButton: React.FC<{}> = () => {
                     <a href={"https://l.instagram.com/?u=https%3A%2F%2Finstabio.cc%2FTheVeryTinyTeacher&e=ATMkiG0sfdrdEVnNf8qrFbvMGvare5TKpGRZlwyBd6_9W4rdhznbfaUfCt57lP5LJD0gKiWmAJtxNmdf&s=1"} target={"_blank"}>
                         <HStack className="items-center space-x-4">
                             <div>Amazon Store</div>
-                            <FiExternalLink/>
+                            <FiExternalLink />
                         </HStack>
                     </a>
                 </DropdownMenu.Item>
@@ -136,7 +136,7 @@ const ShopDropdownButton: React.FC<{}> = () => {
                     <a href={"https://www.teacherspayteachers.com/Store/The-Very-Tiny-Teacher"} target={"_blank"}>
                         <HStack className="items-center space-x-4">
                             <div>Teachers Pay Teachers</div>
-                            <FiExternalLink/>
+                            <FiExternalLink />
                         </HStack>
                     </a>
                 </DropdownMenu.Item>
@@ -150,35 +150,40 @@ export const HomeNav: React.FC<any> = (props) => {
     const router = useRouter();
 
     return (
-        <HStack className={"w-full space-x-10 justify-center py-4"}>
-            <Buttons.Standard className="flex bg-powder-blue rounded-md px-2 hover:shadow-md" onClick={() => {
-                router.push("/");
-            }}>
-                <VStack className="h-full justify-end">
-                    <img src="/home button.svg" />
-                    <span className="font-jim-pam text-3xl font-extrabold">HOME</span>
-                </VStack>
-            </Buttons.Standard>
-            <Buttons.Standard className="flex bg-sea-green rounded-md px-2 hover:shadow-md" onClick={() => {
-                router.push("/app/about");
-            }}>
-                <VStack className="h-full justify-end">
-                    <img className="max-h-[140px]" src="/About Me Icon.svg" />
-                    <span className="font-jim-pam text-3xl font-extrabold">ABOUT ME</span>
-                </VStack>
-            </Buttons.Standard>
+        <HStack className={"w-full space-x-32 justify-center py-4"}>
             <HStack>
-                <ShopDropdownButton />
+                <DesktopHeader />
             </HStack>
-            <Buttons.Standard
-                className="flex bg-pink rounded-md px-2 hover:shadow-md"
-                onClick={() => { router.push("/app/blogs") }}
-            >
-                <VStack className="h-full justify-end">
-                    <img src="/Blog Icon.svg" />
-                    <span className="font-jim-pam text-3xl font-extrabold">BLOG</span>
-                </VStack>
-            </Buttons.Standard>
+            <HStack className="space-x-20">
+                <Buttons.Standard className="flex bg-powder-blue rounded-md px-2 hover:shadow-md" onClick={() => {
+                    router.push("/");
+                }}>
+                    <VStack className="h-full justify-end">
+                        <img src="/home button.svg" />
+                        <span className="font-jim-pam text-3xl font-extrabold">HOME</span>
+                    </VStack>
+                </Buttons.Standard>
+                <Buttons.Standard className="flex bg-sea-green rounded-md px-2 hover:shadow-md" onClick={() => {
+                    router.push("/app/about");
+                }}>
+                    <VStack className="h-full justify-end">
+                        <img className="max-h-[140px]" src="/About Me Icon.svg" />
+                        <span className="font-jim-pam text-3xl font-extrabold">ABOUT ME</span>
+                    </VStack>
+                </Buttons.Standard>
+                <HStack>
+                    <ShopDropdownButton />
+                </HStack>
+                <Buttons.Standard
+                    className="flex bg-pink rounded-md px-2 hover:shadow-md"
+                    onClick={() => { router.push("/app/blogs") }}
+                >
+                    <VStack className="h-full justify-end">
+                        <img src="/Blog Icon.svg" />
+                        <span className="font-jim-pam text-3xl font-extrabold">BLOG</span>
+                    </VStack>
+                </Buttons.Standard>
+            </HStack>
         </HStack>
     )
 }

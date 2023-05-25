@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Buttons } from '../../components/button';
 import { HStack, VStack } from '../../components/flexbox';
-import DesktopLayout from '../../components/layout';
+import DefaultLayout from '../../components/layout';
 import { DesktopHeader, HomeNav } from '../../components/navbar';
 import { Blog, useGetAllBlogsQuery } from '../../src/generated/graphql';
 import { BlogDocument } from '../../prismicio-types';
@@ -94,7 +94,7 @@ export const BlogsList = (props : {
     const blogs = data?.blogs ? [...data?.blogs] : []
 
     return (
-        <DesktopLayout>
+        <DefaultLayout>
             <HStack className="py-8">
                 <DesktopHeader />
                 <HomeNav />
@@ -139,6 +139,6 @@ export const BlogsList = (props : {
                     }
                 </VStack>
             </VStack>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }

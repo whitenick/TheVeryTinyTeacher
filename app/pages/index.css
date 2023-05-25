@@ -32,8 +32,6 @@
 } */
 
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
     @font-face {
@@ -72,4 +70,12 @@
     div {
         font-family: 'marion'
     }
+
+    a {
+        font-family: 'sans'
+    }
 }
+
+@tailwind components;
+
+@tailwind utilities;

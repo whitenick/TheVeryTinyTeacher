@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/bananas/banana-animation.jsx", "components/bananas/banana-styles.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Buttons } from "../../components/button";
 import { HStack, VStack } from "../../components/flexbox";
-import DesktopLayout from "../../components/layout";
+import DefaultLayout from "../../components/layout";
 import { DesktopHeader, HomeNav } from "../../components/navbar";
 import { useGetLatestBlogQuery } from "../../src/generated/graphql";
 import { BlogPost } from "./blog";
@@ -15,7 +15,7 @@ const BlogPage = (props: {blog?: BlogDocument}) => {
     const router = useRouter();
 
     return (
-        <DesktopLayout>
+        <DefaultLayout>
             <HStack className="py-8">
                 <DesktopHeader />
                 <HomeNav />
@@ -43,7 +43,7 @@ const BlogPage = (props: {blog?: BlogDocument}) => {
                     />
                 </HStack>
             </VStack>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }
 

@@ -1,4 +1,4 @@
-import DesktopLayout from '../../../components/layout';
+import DefaultLayout from '../../../components/layout';
 import { BlogsList } from '../../../modules/blog/blog';
 import BlogPage from '../../../modules/blog/blog-page';
 import { createClient } from '../../../prismicio';
