@@ -15,13 +15,14 @@ import { useGLTF } from "@react-three/drei";
 const DepthOfField = dynamic(() => import("@react-three/postprocessing").then(mod => mod.DepthOfField), { ssr: false });
 const EffectComposer = dynamic(() => import("@react-three/postprocessing").then(mod => mod.EffectComposer), { ssr: false });
 
-const BananaBackground = () => {
+const BananaBackground = (props) => {
     return (
-        <div className="h-[100vh]">
+        <div className="h-[100vh] w-[100vw] overflow-hidden">
             <Suspense fallback={null}>
                 <Bananas />
                 <FadeIn />
             </Suspense>
+            { props.children }
         </div>
     )
 }
@@ -33,7 +34,7 @@ function Banana({ index, z, speed }) {
 
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, -z]);
 
-    const { nodes, materials } = useGLTF('/banana.glb');
+    const { nodes, materials } = useGLTF('/pencil.glb');
 
     const [data] = useState({
         y: THREE.MathUtils.randFloatSpread(height * 2),
@@ -54,19 +55,26 @@ function Banana({ index, z, speed }) {
     return (
         <>
             {/* @ts-expect-error */}
-            <group ref={ref} distances={[0, 65, 80]} scale={.05}>
-                <mesh
+            <group ref={ref} distances={[0, 65, 80]} scale={5}>
+                {/* Banana Mesh */}
+                {/* <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Object_2.geometry}
                     material={materials["ripe-banana_u1_v1"]}
+                /> */}
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.defaultMaterial.geometry}
+                    material={materials.Default}
                 />
             </group>
         </>
     )
 }
 
-useGLTF.preload("/banana.glb");
+// useGLTF.preload("/banana.glb");
 
 function Bananas({ speed = 1, count = 80, depth = 80, easing = (x) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
     return (

@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Buttons } from '../../components/button';
 import { HStack, VStack } from '../../components/flexbox';
-import DefaultLayout from '../../components/layout';
+import {DefaultLayout} from '../../components/layout';
 import { DesktopHeader, HomeNav } from '../../components/navbar';
 import { Blog, useGetAllBlogsQuery } from '../../src/generated/graphql';
 import { BlogDocument } from '../../prismicio-types';

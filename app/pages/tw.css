@@ -800,6 +800,10 @@ a {
   left: 50%;
 }
 
+.left-\[20\%\] {
+  left: 20%;
+}
+
 .start-full {
   inset-inline-start: 100%;
 }
@@ -818,6 +822,22 @@ a {
 
 .top-\[-5px\] {
   top: -5px;
+}
+
+.top-\[40\%\] {
+  top: 40%;
+}
+
+.left-32 {
+  left: 8rem;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.left-\[40\%\] {
+  left: 40%;
 }
 
 .z-50 {
@@ -878,6 +898,10 @@ a {
   height: 100%;
 }
 
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .h-\[200px\] {
   height: 200px;
 }
@@ -892,10 +916,6 @@ a {
 
 .h-screen {
   height: calc(var(--vh) * 100);
-}
-
-.h-\[100vh\] {
-  height: 100vh;
 }
 
 .max-h-\[140px\] {
@@ -944,6 +964,10 @@ a {
 
 .w-\[32px\] {
   width: 32px;
+}
+
+.w-\[60\%\] {
+  width: 60%;
 }
 
 .w-\[70\%\] {
@@ -1096,6 +1120,10 @@ a {
   align-self: flex-end;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .whitespace-pre-wrap {
   white-space: pre-wrap;
 }
@@ -1199,6 +1227,10 @@ a {
   background-color: rgb(253 250 250 / var(--tw-bg-opacity));
 }
 
+.bg-pink-100\/50 {
+  background-color: rgb(253 250 250 / 0.5);
+}
+
 .bg-powder-blue {
   background-color: #e9fffeff;
 }
@@ -1217,6 +1249,10 @@ a {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-opacity-0 {
+  --tw-bg-opacity: 0;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1227,6 +1263,10 @@ a {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-20 {
+  padding: 5rem;
 }
 
 .p-4 {
@@ -1330,6 +1370,10 @@ a {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-jim-pam {

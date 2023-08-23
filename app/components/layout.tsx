@@ -39,7 +39,7 @@ export const DefaultLayout = (props) => {
                 "flex flex-col bg-pink-100 h-[100%]"
             }
         >
-            { navBarSlot }
+            { !navBarSlot ? <NavBar /> : navBarSlot }
             <VStack className={"h-full w-full bg-friendly-eskimo"}>
                 <ScrollView className={"h-full w-full"}>{props.children}</ScrollView>
             </VStack>

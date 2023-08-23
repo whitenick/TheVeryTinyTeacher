@@ -54,7 +54,7 @@ const Gauge = () => {
 
     return (
         <SideNavLayout>
-            <HStack className={"bg-pink-100 h-full w-[80vw] items-start p-10 space-x-24"}>
+            <HStack className={"h-full w-[80vw] items-start p-10 space-x-24 bg-opacity-0"}>
                 <VStack>
                     <nav className="flex flex-col space-y-1">
                         <a
@@ -93,53 +93,56 @@ const Gauge = () => {
                         </a>
                     </nav>
                 </VStack>
-                <VStack className='w-full'>
-                    <article
-                        className="flex flex-col gap-4 rounded-lg border border-gray-100 bg-white p-6 w-44"
-                    >
-                        <div className="inline-flex gap-2 self-end rounded bg-red-100 p-1 text-red-600">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
+                <VStack className='w-full bg-opacity-0'>
+                    <BananaBackground>
+                        <div className="fixed top-24 left-[40%] z-100">
+                            <article
+                                className="flex flex-col gap-4 rounded-lg border bg-white border-gray-100 p-6 w-44"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
-                                />
-                            </svg>
+                                <div className="inline-flex gap-2 self-end rounded bg-red-100 p-1 text-red-600">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-4 w-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
+                                        />
+                                    </svg>
 
-                            <span className="text-xs font-medium"> 67.81% </span>
+                                    <span className="text-xs font-medium"> 67.81% </span>
+                                </div>
+
+                                <div>
+                                    <strong className="block text-sm font-medium text-gray-500"> Volume </strong>
+
+                                    <p>
+                                        <span className="text-2xl font-medium text-gray-900">{`${loudAtom.volume}%`}</span>
+
+                                        <span className="text-xs text-gray-500"> from $404.32 </span>
+                                    </p>
+                                </div>
+                            </article>
+                            <GaugeChart
+                                id={"loud-chart-1"}
+                                hideText={true}
+                                nrOfLevels={10}
+                                arcWidth={.8}
+                                colors={['#FFFFFF', '#e3c7b9', '#c56f25ff']}
+                                percent={((loudAtom.volume) / 100) * .5}
+                                style={{
+                                    height: '100%',
+                                    width: '100%',
+                                    display: 'flex'
+                                }}
+                            />
                         </div>
-
-                        <div>
-                            <strong className="block text-sm font-medium text-gray-500"> Volume </strong>
-
-                            <p>
-                                <span className="text-2xl font-medium text-gray-900">{`${loudAtom.volume}%`}</span>
-
-                                <span className="text-xs text-gray-500"> from $404.32 </span>
-                            </p>
-                        </div>
-                    </article>
-                    <GaugeChart
-                        id={"loud-chart-1"}
-                        hideText={true}
-                        nrOfLevels={10}
-                        arcWidth={.8}
-                        colors={['#FFFFFF', '#e3c7b9', '#c56f25ff']}
-                        percent={((loudAtom.volume) / 100) * .5}
-                        style={{
-                            height: '100%',
-                            width: '100%',
-                            display: 'flex'
-                        }}
-                    />
-                    <BananaBackground />
+                    </BananaBackground>
                 </VStack>
             </HStack>
         </SideNavLayout>

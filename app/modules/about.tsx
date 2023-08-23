@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { HStack, VStack } from "../components/flexbox";
-import DefaultLayout from "../components/layout";
+import {DefaultLayout} from "../components/layout";
 import { DesktopHeader, HomeNav } from "../components/navbar";
 import { usePocket } from "../database";
 import { PostsRecord } from "../src/generated/db-types";
