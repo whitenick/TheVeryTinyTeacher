@@ -1,6 +1,10 @@
 from pyannote.audio import Pipeline
 from dotenv import load_dotenv
 import os
+import torch
+
+x = torch.rand(5, 3)
+print(x)
 
 load_dotenv()
 
