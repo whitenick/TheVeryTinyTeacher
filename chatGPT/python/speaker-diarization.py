@@ -6,7 +6,6 @@ import torch
 from pyannote.database import FileFinder, get_protocol
 from pyannote.metrics.diarization import DiarizationErrorRate
 
-
 x = torch.rand(5, 3)
 print(x)
 
