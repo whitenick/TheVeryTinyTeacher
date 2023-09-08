@@ -4,9 +4,11 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Buttons } from '../../components/button';
 import { HStack, VStack } from '../../components/flexbox';
-import DesktopLayout from '../../components/layout';
+import {DefaultLayout} from '../../components/layout';
 import { DesktopHeader, HomeNav } from '../../components/navbar';
 import { Blog, useGetAllBlogsQuery } from '../../src/generated/graphql';
+import { BlogDocument } from '../../prismicio-types';
+import { RTTextNode } from '@prismicio/client';
 
 const FilterButton: React.FC<{ text: string }> = (props) => {
     return (
@@ -55,7 +57,7 @@ export const BlogPreview: React.FC<{ blog: Blog }> = (props) => {
     const router = useRouter();
 
     return (
-        <VStack className="rounded shadow-lg w-[100%] md:w-[50vw]">
+        <VStack className="rounded shadow-lg w-[100%] md:w-[50vw] bg-white">
             <HStack className="rounded-t bg-pink py-2 px-4 text-white text-xl">
                 {!props.blog?.date ? null : formatStringToDate(props.blog?.date)?.toString()}
             </HStack>
@@ -83,14 +85,16 @@ export const BlogPreview: React.FC<{ blog: Blog }> = (props) => {
     )
 }
 
-export const BlogsList: React.FC = () => {
+export const BlogsList = (props : {
+    blogs: BlogDocument[]
+}) => {
     const [categoryFilter, setCategoryFilter] = useState(null);
     const { data, loading } = useGetAllBlogsQuery();
     console.log(data?.blogs)
     const blogs = data?.blogs ? [...data?.blogs] : []
 
     return (
-        <DesktopLayout>
+        <DefaultLayout>
             <HStack className="py-8">
                 <DesktopHeader />
                 <HomeNav />
@@ -110,12 +114,12 @@ export const BlogsList: React.FC = () => {
             </HStack>
             <VStack>
                 <VStack className="p-8 items-center space-y-14">
-                    {!loading && blogs?.length > 0 ?
-                        blogs
+                    {!loading && props.blogs?.length > 0 ?
+                        props.blogs
                             ?.sort((a, b) => {
-                                if (DateTime.fromISO(a?.date) < DateTime.fromISO(b?.date)) {
+                                if (DateTime.fromISO(a?.first_publication_date) < DateTime.fromISO(b?.first_publication_date)) {
                                     return 1;
-                                } else if (DateTime.fromISO(a?.date) > DateTime.fromISO(b?.date)) {
+                                } else if (DateTime.fromISO(a?.first_publication_date) > DateTime.fromISO(b?.first_publication_date)) {
                                     return -1;
                                 } 
                             })
@@ -123,13 +127,18 @@ export const BlogsList: React.FC = () => {
                                 console.log(d)
                                 return (
                                     <BlogPreview
-                                        blog={d}
+                                        blog={{
+                                            id: d?.id,
+                                            title: (d?.data?.title?.[0] as RTTextNode)?.text,
+                                            description: (d?.data?.body?.[0] as RTTextNode)?.text,
+                                            date: d?.data?.publish_date
+                                        }}
                                     />
                                 )
                             }) : null
                     }
                 </VStack>
             </VStack>
-        </DesktopLayout>
+        </DefaultLayout>
     )
 }

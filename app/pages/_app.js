@@ -1,10 +1,13 @@
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+import { PocketProvider } from '../database';
 import Head from 'next/head';
 import Script from 'next/script';
 import React from 'react';
 import ModalManager from '../components/modal.service';
 import '../styles/globals.css';
 import './tw.css';
+import { repositoryName } from '../prismicio';
+import { PrismicPreview } from '@prismicio/next';
 
 const scriptFunction = () => {
     (function (w, d, e, u, f, l, n) {
@@ -24,13 +27,13 @@ const httpLink = new HttpLink({
     fetchOptions: {
         mode: 'cors',
     },
-  });
+});
 
-  
-  const apolloClient = new ApolloClient({
+
+const apolloClient = new ApolloClient({
     link: httpLink,
     cache: new InMemoryCache()
-  });
+});
 
 function MyApp({ Component, pageProps }) {
     console.log(process.env.NEXT_PUBLIC_IS_LOCAL)
@@ -39,12 +42,6 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <title>Tiny Teacher</title>
                 <link rel="apple icon" href="/favicon.ico" />
-                {/* <Script src="/mailer.js" type="text/javascript"/> */}
-                {/* {(typeof window !== "undefined") &&
-                    <script>
-                        {scriptFunction}
-                    </script>
-                } */}
                 <Script
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
@@ -65,7 +62,14 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <ModalManager />
             <ApolloProvider client={apolloClient}>
-                <Component {...pageProps} />
+                <PrismicPreview repositoryName={repositoryName}>
+                    <Component {...pageProps} />
+                </PrismicPreview>
+                {/* <PocketProvider>
+                    <PrismicPreview repositoryName={repositoryName}>
+                        <Component {...pageProps} />
+                    </PrismicPreview>
+                </PocketProvider> */}
             </ApolloProvider>
         </React.Fragment>
     )

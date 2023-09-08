@@ -4,6 +4,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./modules/**/*.{js,ts,jsx,tsx}",
   ],
+  h1: {
+    fontFamily: 'lobster'
+  },
+  a: {
+    fontFamily: 'marion'
+  },
   theme: {
     height: (theme) => ({
       auto: "auto",
@@ -16,19 +22,24 @@ module.exports = {
         'jim-pam': ['jim-pam'],
         'little-spark': ['little-spark'],
         'boom-roasted': ['boom-roasted'],
-        'marion': ['marion']
+        'marion': ['marion'],
+        'lobster': ['lobster']
+      },
+      colors: {
+        "pink": {
+          DEFAULT: "#e3c7b9",
+          100: "#fdfafa"
+        },
+        "white": "#ffffff",
+        "powder-blue": "#e9fffeff",
+        "sky-blue": "#00c9fd",
+        "sea-green": "#cdd5beff",
+        "deep-orange": "#c56f25ff",
+        "forest-green": "#73A276",
+        "mint-cream": "#EFF8F0",
+        "bone": "#FDFBFA"
       }
-    },
-    colors: {
-      "pink": "#e3c7b9",
-      "white": "#ffffff",
-      "powder-blue": "#e9fffeff",
-      "sky-blue": "#00c9fd",
-      "sea-green": "#cdd5beff",
-      "deep-orange": "#c56f25ff",
-      "forest-green": "#73A276",
-      "mint-cream": "#EFF8F0"
     }
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }

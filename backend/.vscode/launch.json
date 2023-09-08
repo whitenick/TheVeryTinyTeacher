@@ -5,11 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/server.go"
+        },
+
+        {
             "name": "Launch Package",
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "./"
+            "program": "./server.go"
         }
     ]
 }

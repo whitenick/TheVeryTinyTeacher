@@ -2,7 +2,7 @@
 /*@import "tailwindcss/components";*/
 /*@import "tailwindcss/utilities";*/
 
-@layer base {
+/* @layer base {
     @font-face {
         font-family: 'jim-pam';
         src: url("../public/BBPAMJIM4EVER.ttf") format("truetype");
@@ -29,8 +29,53 @@
         font-family: 'boom-roasted';
         src: url("../public/BBBoomRoasted.ttf") format("truetype");
     }
-}
+} */
 
 @tailwind base;
+
+@layer base {
+    @font-face {
+        font-family: 'jim-pam';
+        src: url("../public/BBPAMJIM4EVER.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: 'little-spark';
+        src: url("../public/KGALittleSpark.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: 'marion';
+        src: url("../public/Marion_Regular.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: 'boom-roasted';
+        src: url("../public/BBBoomRoasted.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: 'lobster';
+        src: url("../public/Lobster-Regular.ttf") format("truetype");
+    }
+
+    h1 {
+        font-family: 'lobster'
+    }
+
+    p {
+        font-family: 'jim-pam'
+    }
+
+    div {
+        font-family: 'marion'
+    }
+
+    a {
+        font-family: 'sans'
+    }
+}
+
 @tailwind components;
+
 @tailwind utilities;
