@@ -1,7 +1,7 @@
 package database
 
 import (
-	"backend/graph"
+	// "backend/graph"
 	"backend/graph/generated"
 	"log"
 	"net/http"
@@ -15,8 +15,6 @@ import (
 
 	"backend/storage"
 )
-
-const defaultPort = "8080"
 
 // func main() {
 // 	println("hello")
@@ -32,6 +30,7 @@ const defaultPort = "8080"
 // }
 
 func runGraphQLServer() {
+	const defaultPort = "8080"
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
@@ -58,7 +57,7 @@ func runGraphQLServer() {
 func Routes() chi.Router {
 	router := chi.NewRouter()
 
-	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
+	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: nil}))
 
 	router.Route("/graphiql", func(r chi.Router) {
 		r.Get("/", playground.Handler("GraphQL playground", "/api/query"))
