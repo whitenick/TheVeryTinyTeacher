@@ -16,19 +16,6 @@ import (
 	"backend/storage"
 )
 
-// func main() {
-// 	println("hello")
-// 	app := pocketbase.New()
-
-// 	if err := app.Start(); err != nil {
-// 		log.Fatal(err)
-// 	}
-// }
-
-// func runPocketBase() {
-
-// }
-
 func runGraphQLServer() {
 	const defaultPort = "8080"
 	port := os.Getenv("PORT")
