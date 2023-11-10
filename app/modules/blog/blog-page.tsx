@@ -17,7 +17,6 @@ const BlogPage = (props: {blog?: BlogDocument}) => {
     return (
         <DefaultLayout>
             <HStack className="py-8">
-                <DesktopHeader />
                 <HomeNav />
             </HStack>
             <VStack

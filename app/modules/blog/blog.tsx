@@ -96,7 +96,6 @@ export const BlogsList = (props : {
     return (
         <DefaultLayout>
             <HStack className="py-8">
-                <DesktopHeader />
                 <HomeNav />
             </HStack>
             <HStack>

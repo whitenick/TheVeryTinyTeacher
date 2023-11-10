@@ -23,7 +23,9 @@ module.exports = {
         'little-spark': ['little-spark'],
         'boom-roasted': ['boom-roasted'],
         'marion': ['marion'],
-        'lobster': ['lobster']
+        'raleway': ['Ubuntu'],
+        'lobster': ['lobster'],
+        'montserrat': ['Montserrat'],
       },
       colors: {
         "pink": {

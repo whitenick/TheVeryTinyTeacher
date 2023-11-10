@@ -656,15 +656,15 @@ h1 {
 }
 
 p {
-  font-family: 'jim-pam'
+  font-family: 'monospace'
 }
 
 div {
-  font-family: 'marion'
+  font-family: 'raleway'
 }
 
 a {
-  font-family: 'sans'
+  font-family: 'mono'
 }
 
 *, ::before, ::after {
@@ -804,6 +804,10 @@ a {
   left: 20%;
 }
 
+.left-\[40\%\] {
+  left: 40%;
+}
+
 .start-full {
   inset-inline-start: 100%;
 }
@@ -816,6 +820,10 @@ a {
   top: 50%;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-\[-50px\] {
   top: -50px;
 }
@@ -826,18 +834,6 @@ a {
 
 .top-\[40\%\] {
   top: 40%;
-}
-
-.left-32 {
-  left: 8rem;
-}
-
-.top-24 {
-  top: 6rem;
-}
-
-.left-\[40\%\] {
-  left: 40%;
 }
 
 .z-50 {
