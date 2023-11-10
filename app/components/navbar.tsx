@@ -150,7 +150,7 @@ export const HomeNav: React.FC<any> = (props) => {
     const router = useRouter();
 
     return (
-        <HStack className={"w-full space-x-32 justify-center py-4"}>
+        <HStack className={"w-full space-x-32 justify-center py-8 shadow"}>
             <HStack>
                 <DesktopHeader />
             </HStack>
