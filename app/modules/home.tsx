@@ -18,11 +18,11 @@ const Home: React.FC<any> = ({ }) => {
     return (
         <DefaultLayout>
             <VStack className={'justify-center'} >
-                <HStack className={"py-8 shadow"}>
+                <HStack className={""}>
                     {/* <DesktopHeader /> */}
                     <HomeNav />
                 </HStack>
-                <HStack className="flex flex-col items-center border-t border-[#f8d9d9] py-12 shadow">
+                <HStack className="flex flex-col items-center py-12 shadow">
                     {/* <span className="font-lobster font-semibold text-pink text-[64px]">resources</span> */}
 
                     <HStack className='px-16 justify-center'>
