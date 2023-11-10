@@ -127,7 +127,7 @@ const ShopDropdownButton: React.FC<{}> = () => {
                 <DropdownMenu.Item className="py-2 text-deep-orange">
                     <a href={"https://l.instagram.com/?u=https%3A%2F%2Finstabio.cc%2FTheVeryTinyTeacher&e=ATMkiG0sfdrdEVnNf8qrFbvMGvare5TKpGRZlwyBd6_9W4rdhznbfaUfCt57lP5LJD0gKiWmAJtxNmdf&s=1"} target={"_blank"}>
                         <HStack className="items-center space-x-4">
-                            <div>Amazon Store</div>
+                            <div className="">Amazon Store</div>
                             <FiExternalLink />
                         </HStack>
                     </a>

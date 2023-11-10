@@ -71,7 +71,7 @@ teachers pay teachers page. I work my hardest to make sure my resources are qual
         <DefaultLayout>
             <VStack className="px-32">
                 <HStack className={"py-4"}>
-                    <DesktopHeader />
+                    {/* <DesktopHeader /> */}
                     <HStack className={"w-full justify-center py-4"}>
                         <HomeNav />
                     </HStack>

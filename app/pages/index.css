@@ -59,22 +59,24 @@
         src: url("../public/Lobster-Regular.ttf") format("truetype");
     }
 
-    h1 {
+    h1 {    
         font-family: 'lobster'
     }
 
     p {
-        font-family: 'jim-pam'
+        font-family: 'monospace'
     }
 
     div {
-        font-family: 'marion'
+        font-family: 'raleway'
     }
 
     a {
-        font-family: 'sans'
+        font-family: 'mono'
     }
 }
+
+
 
 @tailwind components;
 
