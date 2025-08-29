@@ -64,7 +64,7 @@ const Home: React.FC<any> = ({ }) => {
                 </HStack>
                 <HStack className="flex flex-col py-16 px-64 gap-y-4">
                     <span className="font-lobster font-bold text-pink text-[64px]">sarah adler</span>
-                    <span className="font-jim-pam text-pink font-semibold text-[32px] w-[70%]">A very fine teacher. A fantastic teacher. Some say the best of the rest. Checkout her materials and blog insights here.</span>
+                    <span className="font-jim-pam text-pink font-semibold text-[32px] w-[70%]">Checkout her materials and blog insights here.</span>
                     <Buttons.Standard onClick={() => {
                         router.push("/app/blogs");   
                     }} className="border border-pink rounded-md w-[100px] shadow">
