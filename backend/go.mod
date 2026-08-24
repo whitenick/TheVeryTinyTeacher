@@ -100,7 +100,7 @@ require (
 	github.com/agnivade/levenshtein v1.1.1 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
 	github.com/go-chi/chi v1.5.4
-	github.com/gorilla/websocket v1.5.0 // indirect
+	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pocketbase/pocketbase v0.15.3
 	github.com/rs/cors v1.8.2
